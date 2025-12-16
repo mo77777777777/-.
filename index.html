@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>طموح للريادة</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box;font-family:'Segoe UI',Tahoma}
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+}
+
+/* خلفية */
+.circles span{
+    position:fixed;
+    width:90px;
+    height:90px;
+    background:rgba(255,255,255,0.06);
+    border-radius:50%;
+    animation:float 28s linear infinite;
+}
+@keyframes float{
+    from{transform:translateY(110vh);}
+    to{transform:translateY(-130vh);}
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+/* كرت */
+.card{
+    background:#111;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,255,200,0.15);
+    transition:.3s;
+    cursor:pointer;
+}
+.card:hover{transform:translateY(-6px);}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:18px;
+}
+.card-title{
+    font-size:20px;
+    margin:0 0 8px;
+}
+.card-text{
+    color:#ccc;
+    line-height:1.6;
+    font-size:15px;
+}
+
+/* زر */
+.btn{
+    display:inline-block;
+    padding:10px 30px;
+    border-radius:25px;
+    background:linear-gradient(45deg,#00ffc3,#00b3ff);
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+/* صفحات */
+.page{display:none}
+.page h2{text-align:center;margin-bottom:20px}
+
+.back{
+    margin-bottom:25px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- خلفية -->
+<div class="circles">
+  <span style="left:10%"></span>
+  <span style="left:30%"></span>
+  <span style="left:55%"></span>
+  <span style="left:80%"></span>
+</div>
+
+<div class="container">
+
+<!-- الصفحة الرئيسية -->
+<div id="home">
+
+<div class="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU-0HQljyU9HpQzt2o787Jl9GXoC5dnui7Nw&s">
+  <div class="card-body">
+    <h3 class="card-title">مدرسة الطموح الاهلية</h3>
+    <p class="card-text">مؤسسة تعليمية تسعى لبناء جيل متميز.</p>
+    <div style="text-align:center">
+      <span class="btn" onclick="showSections()">مشاهدة</span>
+    </div>
+  </div>
+</div>
+
+<div id="sections" class="grid" style="display:none">
+
+<div class="card" onclick="openPage('about')">
+  <div class="card-body">
+    <h3 class="card-title">عن المدرسة</h3>
+    <p class="card-text">تعريف ورؤية المدرسة</p>
+  </div>
+</div>
+
+<div class="card" onclick="openPage('branches')">
+  <div class="card-body">
+    <h3 class="card-title">الفروع</h3>
+    <p class="card-text">مراحل وفروع التعليم</p>
+  </div>
+</div>
+
+<div class="card" onclick="openPage('achievements')">
+  <div class="card-body">
+    <h3 class="card-title">الإنجازات</h3>
+    <p class="card-text">الجوائز والتكريمات</p>
+  </div>
+</div>
+
+<div class="card" onclick="openPage('competitions')">
+  <div class="card-body">
+    <h3 class="card-title">المسابقات</h3>
+    <p class="card-text">المشاركات الطلابية</p>
+  </div>
+</div>
+
+<div class="card" onclick="openPage('learning')">
+  <div class="card-body">
+    <h3 class="card-title">جانب من التعلّم</h3>
+    <p class="card-text">أنشطة داخل الفصول</p>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- عن المدرسة -->
+<div id="about" class="page">
+<div class="back"><span class="btn" onclick="goBack()">⬅ عودة</span></div>
+<h2>عن المدرسة</h2>
+<div class="grid">
+
+<div class="card">
+  <img src="about1.jpg">
+  <div class="card-body">
+    <h3 class="card-title">رؤية المدرسة</h3>
+    <p class="card-text">نسعى للتميّز في التعليم.</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="about2.jpg">
+  <div class="card-body">
+    <h3 class="card-title">رسالتنا</h3>
+    <p class="card-text">بناء طالب واعٍ ومبدع.</p>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- الإنجازات -->
+<div id="achievements" class="page">
+<div class="back"><span class="btn" onclick="goBack()">⬅ عودة</span></div>
+<h2>الإنجازات</h2>
+<div class="grid">
+
+<div class="card">
+  <img src="ach1.jpg">
+  <div class="card-body">
+    <h3 class="card-title">مسابقة منافسات اللغة العربية و الفنون (مجال الرسم)</h3>
+    <p class="card-text">إدارة مدرسة الطموح الثانوية الأهلية بشارع الحج تهنئ ابنها الطالب يوسف محمود سعد الهسكي لحصوله على الوسام الذهبي) في منافسات اللغة العربية والفنون 2025 مجال الرسم على مستوى المملكة</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="ach2.jpg">
+  <div class="card-body">
+    <h3 class="card-title">مسابقة منافسات اللغة العربية و الفنون (مجال القصة)</h3>
+    <p class="card-text">إدارة مدرسة الطموح الثانوية الأهلية بشارع الحج تهنئى ابنها الطالب إياد محمد عواد لحصوله على الوسام الفضي) في منافسات اللغة العربية والفنون 2025 مجال القصة على مستوى المملكة</p>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- باقي الأقسام نفس الطريقة -->
+
+</div>
+
+<script>
+function showSections(){
+  document.getElementById("sections").style.display="grid";
+}
+
+function openPage(id){
+  document.getElementById("home").style.display="none";
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+  document.getElementById(id).style.display="block";
+}
+
+function goBack(){
+  document.getElementById("home").style.display="block";
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+}
+</script>
+
+</body>
+</html>
